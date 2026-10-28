@@ -1,0 +1,10 @@
+{
+  "id": "markdown-table-sucks",
+  "name": "Markdown Table Sucks",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "Insert or edit Markdown tables in a spreadsheet-like modal. Right-click or run a command; the output is always a clean, valid Markdown table.",
+  "author": "Junru Pu",
+  "authorUrl": "https://github.com/pujunru",
+  "isDesktopOnly": false
+}

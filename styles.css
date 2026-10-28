@@ -1,0 +1,230 @@
+.mts-modal {
+	width: min(960px, 92vw);
+	max-width: 92vw;
+}
+
+.mts-hint {
+	margin-bottom: var(--size-4-3);
+	color: var(--text-faint);
+	font-size: var(--font-ui-smaller);
+}
+
+.mts-grid-wrap {
+	max-height: 60vh;
+	overflow: auto;
+	border: 1px solid var(--background-modifier-border);
+	border-radius: var(--radius-m);
+}
+
+.mts-grid {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+.mts-grid td {
+	padding: 0;
+	border: 1px solid var(--background-modifier-border);
+	vertical-align: top;
+}
+
+.mts-grid tr:first-child td {
+	border-top: none;
+}
+
+.mts-grid td:first-child {
+	border-left: none;
+}
+
+.mts-col-handles td,
+.mts-corner,
+.mts-row-handle {
+	background: var(--background-secondary);
+	text-align: center;
+	vertical-align: middle;
+}
+
+.mts-row-handle {
+	width: 28px;
+}
+
+.mts-handle {
+	padding: 2px;
+	margin: 0 auto;
+	opacity: 0.6;
+}
+
+.mts-handle:hover {
+	opacity: 1;
+}
+
+.mts-cell {
+	position: relative;
+	min-width: 120px;
+}
+
+/* Rendered Markdown is shown until the cell is focused; the transparent textarea on top catches clicks and Tab. */
+.mts-preview {
+	min-height: 2.2em;
+	padding: var(--size-4-1) var(--size-4-2);
+	font-size: var(--font-ui-small);
+	line-height: 1.4;
+	overflow-wrap: anywhere;
+}
+
+.mts-preview > :first-child {
+	margin-top: 0;
+}
+
+.mts-preview > :last-child {
+	margin-bottom: 0;
+}
+
+.mts-preview p,
+.mts-preview ul,
+.mts-preview ol {
+	margin: 0;
+}
+
+.mts-preview img {
+	max-height: 120px;
+}
+
+.mts-cell:not(:focus-within) textarea {
+	position: absolute;
+	inset: 0;
+	height: 100%;
+	opacity: 0;
+	cursor: text;
+}
+
+.mts-cell:focus-within .mts-preview {
+	display: none;
+}
+
+.mts-header .mts-preview {
+	font-weight: var(--font-semibold);
+}
+
+.mts-cell textarea {
+	display: block;
+	width: 100%;
+	min-height: 2.2em;
+	resize: none;
+	overflow: hidden;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	background: transparent;
+	padding: var(--size-4-1) var(--size-4-2);
+	font-size: var(--font-ui-small);
+	line-height: 1.4;
+}
+
+.mts-cell textarea:focus {
+	box-shadow: inset 0 0 0 2px var(--interactive-accent);
+	background: var(--background-primary-alt);
+}
+
+.mts-header .mts-cell {
+	background: var(--background-secondary-alt);
+}
+
+.mts-header .mts-cell textarea {
+	font-weight: var(--font-semibold);
+}
+
+.mts-handle {
+	position: relative;
+	cursor: grab;
+}
+
+.mts-handle:active {
+	cursor: grabbing;
+}
+
+.mts-align-badge {
+	position: absolute;
+	right: -14px;
+	top: 50%;
+	transform: translateY(-50%);
+	color: var(--text-accent);
+}
+
+.mts-align-badge svg {
+	width: 12px;
+	height: 12px;
+}
+
+/* "+" strips along the right and bottom edges */
+.mts-grid td.mts-add {
+	background: var(--background-secondary);
+	color: var(--text-faint);
+	text-align: center;
+	vertical-align: middle;
+	cursor: pointer;
+	transition: background 120ms ease, color 120ms ease;
+}
+
+.mts-grid td.mts-add:hover {
+	background: var(--background-modifier-hover);
+	color: var(--text-accent);
+}
+
+.mts-add svg {
+	width: var(--icon-s);
+	height: var(--icon-s);
+}
+
+.mts-add-col {
+	width: 28px;
+	min-width: 28px;
+}
+
+.mts-add-row {
+	height: 28px;
+}
+
+/* Drop indicators while dragging a row or column */
+.mts-grid tr.mts-drop-before > td {
+	box-shadow: inset 0 3px 0 var(--interactive-accent);
+}
+
+.mts-grid tr.mts-drop-after > td {
+	box-shadow: inset 0 -3px 0 var(--interactive-accent);
+}
+
+.mts-grid td.mts-drop-before {
+	box-shadow: inset 3px 0 0 var(--interactive-accent);
+}
+
+.mts-grid td.mts-drop-after {
+	box-shadow: inset -3px 0 0 var(--interactive-accent);
+}
+
+/* Pop-out window: the grid fills the window instead of a 60vh box */
+.mts-view.mts-editor {
+	display: flex;
+	flex-direction: column;
+	padding: var(--size-4-4);
+}
+
+.mts-view .mts-grid-wrap {
+	flex: 1;
+	max-height: none;
+}
+
+.mts-view .mts-footer {
+	margin-top: var(--size-4-3);
+}
+
+.mts-popout {
+	display: inline-flex;
+	align-items: center;
+	gap: var(--size-2-2);
+	margin-right: auto;
+}
+
+.mts-popout svg {
+	width: var(--icon-s);
+	height: var(--icon-s);
+}
